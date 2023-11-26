@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export const Login = () => {
   return (
-    <div>
-        <div>Hello ini login</div>
+    <div className='flex flex-col gap-3'>
+        <div className='text-center'>Welcome Back!</div>
         <Input name="email" placeholder="email@domain.com" />
         <Input name="password" placeholder="password" type="password" />
         <Button color="primary">
