@@ -8,46 +8,48 @@ import { useLogin } from '../hooks/useLogin';
 
 export const Login = () => {
 
-  const {handleChange, handleSubmitButton} = useLogin();
+  const {isLoading, handleChange, handleSubmitButton} = useLogin();
 
   return (
-    <main className='flex flex-col gap-5'>
-        <section className=''>
-          <div className='text-xl font-bold'>Welcome Back!</div>
-          <p className='text-sm'>Login to your account</p>
-        </section>
+    <main className='flex flex-col justify-between items-center py-10' style={{height:"100vh"}}>
+        <div>  </div>
+        <div className='flex flex-col gap-10'>
+          <div className=''>
+            <div className='text-xl font-bold'>Welcome Back!</div>
+            <p className='text-xs'>Login to your account</p>
+          </div>
 
-        <section className='flex flex-col gap-3'>
-          <Input 
-            name="email" 
-            placeholder="email@domain.com" 
-            endContent={
-              <MailIcon />
-            }
-            onChange={handleChange}
-          />
+          <div className='flex flex-col gap-3'>
+            <Input 
+              name="email" 
+              placeholder="email@domain.com" 
+              endContent={
+                <MailIcon />
+              }
+              onChange={handleChange}
+            />
 
-          <Input 
-            name="password" 
-            placeholder="password" 
-            type="password" 
-            endContent={
-              <PasswdIcon />
-            }
-            onChange={handleChange}
-          />
+            <Input 
+              name="password" 
+              placeholder="password" 
+              type="password" 
+              endContent={
+                <PasswdIcon />
+              }
+              onChange={handleChange}
+            />
 
-          <Button 
-            color="primary"
-            onClick={handleSubmitButton}
-          >
-              Login
-          </Button>
-
-          <div className="flex gap-1 text-sm">
+            <Button 
+              color="primary"
+              onClick={handleSubmitButton}
+            >
+                Login
+            </Button>
+          </div>
+        </div>
+        <section className="flex gap-1 text-xs">
               <div>Don't have an account ?</div>
               <Link href="#" className='text-blue-400'>Register</Link>
-          </div>
         </section>
     </main>
   )
