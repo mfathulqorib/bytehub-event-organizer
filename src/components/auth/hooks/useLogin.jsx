@@ -3,10 +3,11 @@ import React, {useState} from 'react'
 import { API_URL } from "@/config/apiUrl"
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation';
+import Cookies from 'js-cookie';
 
 export const useLogin = () => {
     const router = useRouter();
-    
+
     const [loginData, setLoginData] = useState({
         email: "",
         password: "",
@@ -29,9 +30,9 @@ export const useLogin = () => {
             body: JSON.stringify( { email, password })
         });
         const data = await res.json();
-        console.log(data)
+        Cookies.set("token", data.token);
 
-        if (!data) {
+        if (!data || !data.token) {
             setLoading(false);
             toast.error("Error login!");
             return;
@@ -39,7 +40,8 @@ export const useLogin = () => {
       
           setLoading(false);
           toast.success("Login succesfully, redirecting...");
-          setTimeout(() => router.push("/dashboard"), 2000);return;
+          setTimeout(() => router.push("/dashboard"), 1000);
+          return;
 
     }
 

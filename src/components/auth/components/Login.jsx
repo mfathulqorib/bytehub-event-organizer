@@ -11,9 +11,9 @@ export const Login = () => {
   const {isLoading, handleChange, handleSubmitButton} = useLogin();
 
   return (
-    <main className='flex flex-col justify-between items-center py-10' style={{height:"100vh"}}>
-        <div>  </div>
-        <div className='flex flex-col gap-10'>
+    <main className='flex flex-col justify-between items-center py-5' style={{height:"100vh"}}>
+        <section>  </section>
+        <section className='flex flex-col gap-10'>
           <div className=''>
             <div className='text-xl font-bold'>Welcome Back!</div>
             <p className='text-xs'>Login to your account</p>
@@ -42,14 +42,15 @@ export const Login = () => {
             <Button 
               color="primary"
               onClick={handleSubmitButton}
+              isDisabled={isLoading}
             >
                 Login
             </Button>
           </div>
-        </div>
+        </section>
         <section className="flex gap-1 text-xs">
               <div>Don't have an account ?</div>
-              <Link href="#" className='text-blue-400'>Register</Link>
+              <Link href="/register" className='text-blue-400'>Register</Link>
         </section>
     </main>
   )
