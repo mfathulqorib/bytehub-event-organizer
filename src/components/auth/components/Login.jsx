@@ -11,10 +11,10 @@ export const Login = () => {
   const {isLoading, handleChange, handleSubmitButton} = useLogin();
 
   return (
-    <main className='flex flex-col justify-between items-center py-5' style={{height:"100vh"}}>
+    <main className='flex flex-col justify-between items-center py-10 h-screen'>
         <section>  </section>
         <section className='flex flex-col gap-10'>
-          <div className=''>
+          <div>
             <div className='text-xl font-bold'>Welcome Back!</div>
             <p className='text-xs'>Login to your account</p>
           </div>
