@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MailIcon } from "./Icons/MailIcon";
 import { PasswdIcon } from "./Icons/PasswdIcon";
 import { useLogin } from "../hooks/useLogin";
+import { Logo } from "@/components/Logo";
 
 export const Login = () => {
   const { isLoading, loginData, handleChange, handleLogin } = useLogin();
@@ -12,9 +13,10 @@ export const Login = () => {
 
   return (
     <>
-      <form className="flex flex-col justify-center py-10 my-[5.5rem] h-max">
-        <section className="flex flex-col gap-10">
+      <form className="my-[5.5rem] flex h-max flex-col justify-center py-10">
+        <section className="flex flex-col gap-7">
           <div className="space-y-2">
+            <Logo />
             <div className="text-3xl font-bold">Welcome Back!</div>
             <p className="text-sm">Login to your account</p>
           </div>
