@@ -13,11 +13,10 @@ export const Register = () => {
 
   return (
     <section className="h-screen flex flex-col justify-around">
-      <form className="flex flex-col justify-center py-10 my-[5.5rem] h-max `">
-        {/* <section> </section> */}
+      <form className="flex flex-col justify-center py-10 my-[5.5rem] h-max">
         <section className=" flex flex-col gap-10">
-          <div>
-            <div className="text-xl font-bold">Welcome Back!</div>
+          <div className="space-y-1">
+            <div className="text-xl font-bold">Don't Have an Account?</div>
             <p className="text-xs">Register to create your account</p>
           </div>
 
@@ -51,13 +50,13 @@ export const Register = () => {
               //   onClick={handleLogin}
               //   isDisabled={isLoading}
             >
-              Login
+              Register
             </Button>
           </div>
         </section>
       </form>
       <section className=" flex gap-1 text-xs justify-center">
-        <div>Have an account ?</div>
+        <div>Have an account?</div>
         <Link href="/login" className="text-blue-400">
           Login
         </Link>
