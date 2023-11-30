@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 
 export default function middleware(request) {
-
   const cookie = request.cookies.get("token")?.value;
 
   if (cookie) {
@@ -12,5 +11,5 @@ export default function middleware(request) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*"],
+  matcher: ["/dashboard/:path*", "/"],
 };
