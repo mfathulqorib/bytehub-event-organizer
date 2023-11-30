@@ -7,10 +7,11 @@ import { PasswdIcon } from "./Icons/PasswdIcon";
 import { useLogin } from "../hooks/useLogin";
 
 export const Login = () => {
-  const { isLoading, handleChange, handleLogin } = useLogin();
+  const { isLoading, loginData, handleChange, handleLogin } = useLogin();
+  const { email, password } = loginData;
 
   return (
-    <section className="h-screen flex flex-col justify-around">
+    <>
       <form className="flex flex-col justify-center py-10 my-[5.5rem] h-max">
         <section className="flex flex-col gap-10">
           <div className="space-y-1">
@@ -23,21 +24,19 @@ export const Login = () => {
               type="email"
               name="email"
               placeholder="email@domain.com"
+              value={email}
               endContent={<MailIcon />}
               onChange={handleChange}
             />
             <Input
+              type="password"
               name="password"
               placeholder="password"
-              type="password"
+              value={password}
               endContent={<PasswdIcon />}
               onChange={handleChange}
             />
-            <Button
-              color="primary"
-              onClick={handleLogin}
-              isDisabled={isLoading}
-            >
+            <Button color="primary" onClick={handleLogin} isLoading={isLoading}>
               Login
             </Button>
           </div>
@@ -49,6 +48,6 @@ export const Login = () => {
           Register
         </Link>
       </section>
-    </section>
+    </>
   );
 };

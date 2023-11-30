@@ -7,12 +7,11 @@ import { PasswdIcon } from "./Icons/PasswdIcon";
 import { useRegister } from "../hooks/useRegister";
 
 export const Register = () => {
-  const { loading, handleChange, handleSubmitRegister, registerData } =
-    useRegister();
+  const { loading, handleChange, handleRegister, registerData } = useRegister();
   const { name, email, password } = registerData;
 
   return (
-    <section className="h-screen flex flex-col justify-around">
+    <>
       <form className="flex flex-col justify-center py-10 my-[5.5rem] h-max">
         <section className=" flex flex-col gap-10">
           <div className="space-y-1">
@@ -25,30 +24,32 @@ export const Register = () => {
               name="name"
               type="text"
               placeholder="name"
-              // endContent={<MailIcon/>}
-              // onChange={handleChange}
+              value={name}
+              onChange={handleChange}
             />
 
             <Input
               name="email"
-              placeholder="email@domain.com"
               type="email"
+              placeholder="email@domain.com"
+              value={email}
+              onChange={handleChange}
               endContent={<MailIcon />}
-              // onChange={handleChange}
             />
 
             <Input
               name="password"
-              placeholder="password"
               type="password"
+              placeholder="password"
+              value={password}
+              onChange={handleChange}
               endContent={<PasswdIcon />}
-              // onChange={handleChange}
             />
 
             <Button
               color="primary"
-              //   onClick={handleLogin}
-              //   isDisabled={isLoading}
+              onClick={handleRegister}
+              isLoading={loading}
             >
               Register
             </Button>
@@ -61,6 +62,6 @@ export const Register = () => {
           Login
         </Link>
       </section>
-    </section>
+    </>
   );
 };

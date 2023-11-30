@@ -17,7 +17,7 @@ export const useRegister = () => {
     setRegisterData({ ...registerData, [name]: value });
   }
 
-  async function handleSubmitRegister() {
+  async function handleRegister() {
     const { name, email, password } = registerData;
 
     if (name && email && password) {
@@ -36,7 +36,7 @@ export const useRegister = () => {
         console.log(responseLogin);
         console.log(dataLogin);
 
-        if (responseLogin.status === 200 || responseLogin.status === 410) {
+        if (responseLogin.status === 200 || responseLogin.status === 401) {
           setLoading(false);
           toast.error("Account already registered!");
         } else {
@@ -65,12 +65,12 @@ export const useRegister = () => {
       }
     } else {
       toast.error(
-        `Register failed, please input your ${name ? "" : "name,"} ${
+        `Register failed. Please input your ${name ? "" : "name,"} ${
           email ? "" : "email, and"
         } ${password ? "" : "password"}`
       );
     }
   }
 
-  return { loading, handleChange, handleSubmitRegister, registerData };
+  return { loading, handleChange, handleRegister, registerData };
 };

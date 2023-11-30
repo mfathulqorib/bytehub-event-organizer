@@ -25,12 +25,15 @@ export const useLogin = () => {
 
   const handleLogin = async () => {
     const { email, password } = loginData;
+    setLoading(true);
+
     const res = await fetch(`${API_URL}/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
     const data = await res.json();
+
     Cookies.set("token", data.token);
 
     if (!data || !data.token) {
@@ -45,5 +48,5 @@ export const useLogin = () => {
     return;
   };
 
-  return { isLoading, handleChange, handleLogin };
+  return { isLoading, loginData, handleChange, handleLogin };
 };
