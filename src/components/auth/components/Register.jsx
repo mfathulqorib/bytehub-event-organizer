@@ -5,6 +5,7 @@ import Link from "next/link";
 import { MailIcon } from "./Icons/MailIcon";
 import { PasswdIcon } from "./Icons/PasswdIcon";
 import { useRegister } from "../hooks/useRegister";
+import { Logo } from "@/components/Logo";
 
 export const Register = () => {
   const { loading, handleChange, handleRegister, registerData } = useRegister();
@@ -12,11 +13,12 @@ export const Register = () => {
 
   return (
     <>
-      <form className="flex flex-col justify-center py-10 my-[5.5rem] h-max">
-        <section className=" flex flex-col gap-10">
-          <div className="space-y-1">
-            <div className="text-xl font-bold">Don't Have an Account?</div>
-            <p className="text-xs">Register to create your account</p>
+      <form className="my-[5.5rem] flex h-max flex-col justify-center py-5">
+        <section className=" flex flex-col gap-7">
+          <div className="space-y-2">
+            <Logo />
+            <div className="text-3xl font-bold">Don't Have an Account?</div>
+            <p className="text-sm">Register to create your account</p>
           </div>
 
           <div className="flex flex-col gap-3">
@@ -47,7 +49,7 @@ export const Register = () => {
             />
 
             <Button
-              color="primary"
+              className="bg-[#5acddc] text-white"
               onClick={handleRegister}
               isLoading={loading}
             >
@@ -56,7 +58,7 @@ export const Register = () => {
           </div>
         </section>
       </form>
-      <section className=" flex gap-1 text-xs justify-center">
+      <section className=" flex justify-center gap-1 text-sm">
         <div>Have an account?</div>
         <Link href="/login" className="text-blue-400">
           Login
