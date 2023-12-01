@@ -5,7 +5,7 @@ import Link from "next/link";
 import { MailIcon } from "./Icons/MailIcon";
 import { PasswdIcon } from "./Icons/PasswdIcon";
 import { useRegister } from "../hooks/useRegister";
-import { Logo } from "@/components/Logo";
+import { Logo, LogoMd } from "@/components/Logo";
 
 export const Register = () => {
   const { loading, handleChange, handleRegister, registerData } = useRegister();

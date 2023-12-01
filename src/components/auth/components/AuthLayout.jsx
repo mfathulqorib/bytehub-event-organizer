@@ -1,11 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Sparkles } from "lucide-react";
-import { DM_Mono, Expletus_Sans } from "next/font/google";
-
-const expletus_sans = Expletus_Sans({
-  subsets: ["latin"],
-});
+import { DM_Mono } from "next/font/google";
 
 const dm_mono = DM_Mono({
   subsets: ["latin"],
