@@ -8,13 +8,16 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Event organizer",
+  title: "EventUs.",
   description: "Event organizer app by bytehub",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/eventus_icon.ico" />
+      </head>
       <body className={poppins.className}>
         <Provider>{children}</Provider>
       </body>

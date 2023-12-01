@@ -25,6 +25,7 @@ export const AuthLayout = ({ children }) => {
             style={{ width: "100%", height: "auto" }}
             alt="landing page photo"
             quality={50}
+            priority
           />
           <div className=" absolute left-[0vw] top-[23vw] z-10 h-max w-max select-none rounded-r-lg border-y-1  border-r-1 border-gray-300 px-6 py-3 text-2xl font-semibold leading-relaxed text-[#eff7f6] backdrop-blur-[10px]">
             <span className={`${dm_mono.className}`}>
