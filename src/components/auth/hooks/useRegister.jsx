@@ -34,7 +34,6 @@ export const useRegister = () => {
         const dataLogin = await responseLogin.json();
 
         console.log(responseLogin);
-        console.log(dataLogin);
 
         if (responseLogin.status === 200 || responseLogin.status === 401) {
           setLoading(false);
@@ -50,7 +49,7 @@ export const useRegister = () => {
           });
           const dataRegistered = await responseRegister.json();
 
-          console.log(dataRegistered);
+          console.log(responseRegister);
 
           setLoading(false);
           setRegisterData({
@@ -67,7 +66,7 @@ export const useRegister = () => {
       toast.error(
         `Register failed. Please input your ${name ? "" : "name,"} ${
           email ? "" : "email, and"
-        } ${password ? "" : "password"}`
+        } ${password ? "" : "password"}`,
       );
     }
   }
