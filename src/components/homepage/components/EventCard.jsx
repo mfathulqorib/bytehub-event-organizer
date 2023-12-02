@@ -1,26 +1,29 @@
 import Image from 'next/image'
 import React from 'react'
-import { shortName, formattedDate, fakeImg } from '@/lib/cardLibray';
+import { shortName, formattedDate, getDay, getMonth, fakeImg } from '@/lib/cardLibray';
 import { Avatar, AvatarGroup } from '@nextui-org/react';
 
 export const EventCard = ({name, description, location, date, isBanned}) => {
   
   return (
     <div className='shadow-lg border-2 border-gray-200 p-4'>
-      <Image src={fakeImg} width={400} height={200} className='rounded-t-xl object-cover'/>
-      <section className='flex items-center'>
-        <div>
-          <div className='text-sm'>{formattedDate(date)}</div>
+      <div className=' bg-cyan-500 rounded-t-lg'>
+        <Image src={fakeImg} width={500} height={150} className='block rounded-t-xl object-cover'/>
+      </div>
+      <section className='flex items-center justify-between gap-3'>
+        <div className='flex flex-col items-center justify-center bg-gray-200 text-orange-900 p-2 rounded-xl'>
+          <h1 className='text-md'>{getMonth(date)}</h1>
+          <p className='text-lg font-bold'>{getDay(date)}</p>
         </div>
-        <div>
+        <div className='flex flex-col gap-3'>
           <div className='text-lg font-bold mt-2'>{shortName(name, 25)}</div>
-          <div className='text-sm text-gray-500'>{shortName(description, 50)}</div>
           <div className='flex gap-3'>
             <div className='text-sm'>{location}</div>            
             <div className={`text-sm ${isBanned ? 'text-red-500' : 'text-green-500'}`}>
-              {isBanned ? 'Banned' : 'Allowed'}
+              {isBanned ? 'Not Available' : 'Available'}
             </div>
           </div>
+          <div className='text-sm text-gray-500'>{shortName(description, 50)}</div>
         </div>
         <div>
           <AvatarGroup isBordered>

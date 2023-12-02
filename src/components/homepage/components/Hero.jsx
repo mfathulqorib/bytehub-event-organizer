@@ -1,5 +1,6 @@
 import { Button } from '@nextui-org/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export const Hero = () => {
@@ -18,7 +19,7 @@ export const Hero = () => {
                 <h1 className='text-3xl font-bold'>Find Your Event</h1>
                 <p className='text-xl'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas deleniti hic ipsum eaque magnam deserunt nemo. Ad ut eaque sint nesciunt saepe amet optio, provident commodi aliquid qui nobis.</p>
                 <div>
-                    <Button>Explore</Button>
+                    <Link href={"#all-events"}><Button>Explore</Button></Link>
                 </div>
             </section>
         </div>

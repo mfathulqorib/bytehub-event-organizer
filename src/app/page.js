@@ -18,6 +18,7 @@ export default async function Page() {
     <Header/>
     <Hero/>
     <Events allData={data}/>
+    <Hero/>
   </main>
   )
 }
