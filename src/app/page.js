@@ -1,6 +1,7 @@
 import { Header } from "@/components/homepage/components/Header";
 import { Hero } from "@/components/homepage/components/Hero";
 import { Events } from "@/components/homepage/components/Events";
+import { Footer } from "@/components/homepage/components/Footer";
 import { API_URL_EVENT } from "@/config/apiUrl";
 
 const getAllEvents = async() => {
@@ -18,7 +19,7 @@ export default async function Page() {
     <Header/>
     <Hero/>
     <Events allData={data}/>
-    <Hero/>
+    <Footer/>
   </main>
   )
 }

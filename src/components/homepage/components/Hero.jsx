@@ -17,7 +17,7 @@ export const Hero = () => {
         <div className='p-20 text-white gap-20'>
             <section className='flex flex-col items-center gap-5 w-50 text-center'>
                 <h1 className='text-3xl font-bold'>Find Your Event</h1>
-                <p className='text-xl'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus voluptas deleniti hic ipsum eaque magnam deserunt nemo. Ad ut eaque sint nesciunt saepe amet optio, provident commodi aliquid qui nobis.</p>
+                <p className='text-xl'>In a world brimming with diverse experiences and endless possibilities, the desire to connect has never been stronger. Our event hub app is your gateway to a universe of enriching encounters, where you'll discover, explore, and engage with a vibrant community of like-minded individuals.</p>
                 <div>
                     <Link href={"#all-events"}><Button>Explore</Button></Link>
                 </div>

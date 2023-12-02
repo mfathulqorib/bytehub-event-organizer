@@ -11,19 +11,21 @@ export const EventCard = ({name, description, location, date, isBanned}) => {
         <Image src={fakeImg} width={500} height={150} className='rounded-t-xl object-cover h-[250px] overflow-hidden'/>
       </div>
       <section className='flex items-center justify-between gap-3 px-4'>
-        <div className='flex flex-col items-center justify-center bg-gray-200 text-orange-900 p-2 rounded-xl'>
-          <h1 className='text-md'>{getMonth(date)}</h1>
-          <p className='text-lg font-bold'>{getDay(date)}</p>
-        </div>
-        <div className='flex flex-col gap-3'>
-          <div className='text-lg font-bold mt-2'>{shortName(name, 25)}</div>
-          <div className='flex gap-3'>
-            <div className='text-sm'>{location}</div>            
-            <div className={`text-sm ${isBanned ? 'text-red-500' : 'text-green-500'}`}>
-              {isBanned ? 'Not Available' : 'Available'}
-            </div>
+        <div className='flex items-center gap-4'>
+          <div className='flex flex-col items-center justify-center bg-gray-200 text-orange-900 p-2 rounded-xl'>
+            <h1 className='text-md'>{getMonth(date)}</h1>
+            <p className='text-lg font-bold'>{getDay(date)}</p>
           </div>
-          <div className='text-sm text-gray-500'>{shortName(description, 50)}</div>
+          <div className='flex flex-col gap-3'>
+            <div className='text-lg font-bold mt-2'>{shortName(name, 25)}</div>
+            <div className='flex gap-3'>
+              <div className='text-sm'>{location}</div>            
+              <div className={`text-sm ${isBanned ? 'text-red-500' : 'text-green-500'}`}>
+                {isBanned ? 'Not Available' : 'Available'}
+              </div>
+            </div>
+            <div className='text-sm text-gray-500'>{shortName(description, 50)}</div>
+          </div>
         </div>
         <div>
           <AvatarGroup isBordered>

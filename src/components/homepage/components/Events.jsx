@@ -15,6 +15,18 @@ export const Events = ({allData}) => {
     return locationLowerCase.includes(searchTermLowerCase);
   });
 
+  const filterEventsByDate = (allData) => {
+    const today = new Date();
+    const todayDateString = today.toDateString();
+  
+    const filteredEvents = allData.filter((event) => {
+      const eventDateString = new Date(event.date).toDateString();
+      return eventDateString === todayDateString;
+    });
+  
+    return filteredEvents;
+  };
+
   return (
     <div className='flex flex-col p-10 gap-10'>
       <section id='all-events' className='flex justify-between items-center'>
@@ -28,7 +40,7 @@ export const Events = ({allData}) => {
       </section>
       <section className='grid grid-cols-2 lg:grid-cols-3 gap-5 max-h-screen  overflow-y-auto'>
         {filteredEvents.map(({name, description, location, date, isBanned, id}, index)=>{
-          return <Link href={`${API_URL_EVENT}/${id}`} key={toString(index)}><EventCard name={name} description={description} location={location} date={date} isBanned={isBanned} /></Link>
+          return <Link href={`/events/${id}`} key={toString(index)}><EventCard name={name} description={description} location={location} date={date} isBanned={isBanned} /></Link>
         })}
       </section>
     </div>
