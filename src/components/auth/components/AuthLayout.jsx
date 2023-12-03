@@ -21,10 +21,11 @@ export const AuthLayout = ({ children }) => {
             width={0}
             height={0}
             src="/photo1.jpg"
-            sizes="100vw"
-            style={{ width: "100%", height: "auto" }}
+            sizes="50vw"
+            className="h-auto w-full"
             alt="landing page photo"
-            quality={50}
+            placeholder="blur"
+            blurDataURL="/photo1.jpg"
             priority
           />
           <div className=" absolute left-[0vw] top-[23vw] z-10 h-max w-max select-none rounded-r-lg border-y-1  border-r-1 border-gray-300 px-6 py-3 text-2xl font-semibold leading-relaxed text-[#eff7f6] backdrop-blur-[10px]">

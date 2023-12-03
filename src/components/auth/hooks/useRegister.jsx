@@ -24,7 +24,7 @@ export const useRegister = () => {
       // Check if email registered
       setLoading(true);
       try {
-        const responseLogin = await fetch(`${API_URL}/login`, {
+        const responseLogin = await fetch(`${API_URL}/auth/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -40,7 +40,7 @@ export const useRegister = () => {
           toast.error("Account already registered!");
         } else {
           // Registered account if email didn't exist
-          const responseRegister = await fetch(`${API_URL}/register`, {
+          const responseRegister = await fetch(`${API_URL}/auth/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

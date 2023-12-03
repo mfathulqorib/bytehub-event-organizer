@@ -16,7 +16,9 @@ export const Register = () => {
       <form className="my-[5.5rem] flex h-max flex-col justify-center py-5">
         <section className=" flex flex-col gap-7">
           <div className="space-y-2">
-            <Logo />
+            <Link href="/">
+              <Logo />
+            </Link>
             <div className="text-3xl font-bold">Don't Have an Account?</div>
             <p className="text-sm">Register to create your account</p>
           </div>
@@ -26,6 +28,7 @@ export const Register = () => {
               name="name"
               type="text"
               placeholder="name"
+              autoComplete="name"
               value={name}
               onChange={handleChange}
             />
@@ -33,6 +36,7 @@ export const Register = () => {
             <Input
               name="email"
               type="email"
+              autoComplete="email"
               placeholder="email@domain.com"
               value={email}
               onChange={handleChange}
@@ -42,6 +46,7 @@ export const Register = () => {
             <Input
               name="password"
               type="password"
+              autocomplete="off"
               placeholder="password"
               value={password}
               onChange={handleChange}

@@ -16,7 +16,9 @@ export const Login = () => {
       <form className="my-[5.5rem] flex h-max flex-col justify-center py-10">
         <section className="flex flex-col gap-7">
           <div className="space-y-2">
-            <Logo />
+            <Link href="/">
+              <Logo />
+            </Link>
             <div className="text-3xl font-bold">Welcome Back!</div>
             <p className="text-sm">Login to your account</p>
           </div>
@@ -25,6 +27,7 @@ export const Login = () => {
             <Input
               type="email"
               name="email"
+              autocomplete="email"
               placeholder="email@domain.com"
               value={email}
               endContent={<MailIcon />}
@@ -33,6 +36,7 @@ export const Login = () => {
             <Input
               type="password"
               name="password"
+              autocomplete="on"
               placeholder="password"
               value={password}
               endContent={<PasswdIcon />}
