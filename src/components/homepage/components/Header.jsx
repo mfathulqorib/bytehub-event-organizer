@@ -9,7 +9,7 @@ export const Header = () => {
         <Logo/>
         <div className='flex text-lg gap-5'>
           <Link href={"#all-events"} className='ease-in duration-100 hover:text-orange-700 hover:text-xl'>Explore</Link>
-          <Link href={"/dashboard"} className='ease-in duration-100 hover:text-orange-700 hover:text-xl'>Events</Link>
+          <Link href={"/dashboard"} className='ease-in duration-100 hover:text-orange-700 hover:text-xl'>Dashboard</Link>
         </div>
         <div className='flex gap-5'>
             <Button size='lg'><Link href={"/dashboard"}>Login</Link></Button>
