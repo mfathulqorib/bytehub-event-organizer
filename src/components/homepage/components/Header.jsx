@@ -1,20 +1,46 @@
-import React from 'react'
-import { Logo } from '../../Logo'
-import Link from 'next/link'
-import { Button } from '@nextui-org/react'
+import React from "react";
+import { Logo, LogoNav } from "../../Logo";
+import Link from "next/link";
+import { Button } from "@nextui-org/react";
 
 export const Header = () => {
   return (
-    <div className='flex justify-between items-center px-10 py-5'>
-        <Logo/>
-        <div className='flex text-lg gap-5'>
-          <Link href={"#all-events"} className='ease-in duration-100 hover:text-orange-700 hover:text-xl'>Explore</Link>
-          <Link href={"/dashboard"} className='ease-in duration-100 hover:text-orange-700 hover:text-xl'>Events</Link>
+    <nav className="fixed left-0 top-0 z-[9999] w-screen bg-gradient-to-r from-[#ffdde1] from-0% to-[#ee9fa8] to-70% drop-shadow-md">
+      <div className="flex items-center justify-between px-10 py-2">
+        <div className="z-10">
+          <Link href="/">
+            <LogoNav />
+          </Link>
         </div>
-        <div className='flex gap-5'>
-            <Button size='lg'><Link href={"/dashboard"}>Login</Link></Button>
-            <Button size='lg' radius="full" className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"><Link href={"/register"}>Getting Start</Link></Button>
+        <div className="absolute left-0 w-full text-center text-lg font-medium">
+          <div className="flex justify-center gap-10">
+            <Link
+              href={"#all-events"}
+              className="duration-100 ease-in hover:text-xl hover:text-orange-700"
+            >
+              Explore
+            </Link>
+            <Link
+              href={"/login"}
+              className="duration-100 ease-in hover:text-xl hover:text-orange-700"
+            >
+              Events
+            </Link>
+          </div>
         </div>
-    </div>
-  )
-}
+        <div className="flex gap-5">
+          <Button className="font-medium" size="md">
+            <Link href={"/login"}>Login</Link>
+          </Button>
+          <Button
+            size="md"
+            radius="full"
+            className="bg-gradient-to-tr from-pink-500 to-yellow-500 font-medium text-white shadow-lg"
+          >
+            <Link href={"/register"}>Getting Start</Link>
+          </Button>
+        </div>
+      </div>
+    </nav>
+  );
+};
