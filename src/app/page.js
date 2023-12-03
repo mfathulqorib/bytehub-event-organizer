@@ -4,22 +4,22 @@ import { Events } from "@/components/homepage/components/Events";
 import { Footer } from "@/components/homepage/components/Footer";
 import { API_URL } from "@/config/apiUrl";
 
-const getAllEvents = async () => {
-  const res = await fetch(`https://eventmakers-api.vercel.app/api/events`, {
-    method: "GET",
-  });
-  const data = await res.json();
-  return data;
-};
+const getAllEvents = async() => {
+  const res = await fetch(`${API_URL}/events`, {
+    method: "GET"
+  })
+  const data = await res.json()
+  return data
+}
 
 export default async function Page() {
-  const { data } = await getAllEvents();
+  const {data} = await getAllEvents()
   return (
-    <main>
-      <Header />
-      <Hero />
-      <Events allData={data} />
-      <Footer />
-    </main>
-  );
+  <main>
+    <Header/>
+    <Hero/>
+    <Events allData={data}/>
+    <Footer/>
+  </main>
+  )
 }
