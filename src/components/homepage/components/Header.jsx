@@ -21,7 +21,7 @@ export const Header = () => {
               Explore
             </Link>
             <Link
-              href={"/login"}
+              href={"/dashboard"}
               className="duration-100 ease-in hover:text-xl hover:text-orange-700"
             >
               Events

@@ -23,7 +23,7 @@ export const EventCard = ({ name, description, location, date, isBanned }) => {
       </div>
       <section className="flex items-center justify-between gap-3 px-4">
         <div className="flex items-center gap-4">
-          <div className="flex w-max flex-col gap-2 py-2">
+          <div className="flex w-max flex-col gap-2 pt-3">
             <div className="flex flex-col items-center justify-center rounded-xl bg-gray-200 p-2 text-orange-900">
               <h1 className="text-md">{getMonth(date)}</h1>
               <p className="text-lg font-bold">{getDay(date)}</p>
@@ -40,6 +40,10 @@ export const EventCard = ({ name, description, location, date, isBanned }) => {
               ></span>
               {isBanned ? "Not Available" : "Available"}
             </div>
+            <AvatarGroup isBordered>
+              <Avatar src="https://i.pravatar.cc/150?u=a042581f4e29026024d" />
+              <Avatar src="https://i.pravatar.cc/150?u=a04258a2462d826712d" />
+            </AvatarGroup>
           </div>
           <div className="flex flex-col gap-3">
             <div className="mt-2 text-lg font-bold">{shortName(name, 25)}</div>

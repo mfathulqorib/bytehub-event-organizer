@@ -44,7 +44,7 @@ export const useLogin = () => {
 
     setLoading(false);
     toast.success("Login succesfully, redirecting...");
-    setTimeout(() => router.push("/dashboard"), 1000);
+    setTimeout(() => router.push("/dashboard"), 500);
     return;
   };
 
