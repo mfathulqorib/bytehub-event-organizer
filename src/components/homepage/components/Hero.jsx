@@ -12,7 +12,7 @@ export const Hero = () => {
   return (
     <div className='relative block bg-gray-800'>
         <div className='absolute w-full h-full opacity-10 -z-9'>
-            <Image src={heroImage} fill className="object-cover" alt="" />
+            <Image src={heroImage} fill className="object-cover" alt=""/>
         </div>
         <div className='p-20 text-white gap-20'>
             <section className='flex flex-col items-center gap-5 w-50 text-center'>

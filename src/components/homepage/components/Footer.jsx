@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <>
         <div className='flex justify-center items-center p-20 gap-10'>
-            <Image src={fakeImg} width={300} height={700}/>
+            <Image src={fakeImg} width={300} height={700} sizes='100vh' className='h-auto lg:w-[30%]' alt=''/>
             <div className='flex flex-col gap-5'>
                 <div className='flex flex-col'>
                     <h1 className='text-3xl font-extrabold text-gray-800'>Join or Create Your Event</h1>

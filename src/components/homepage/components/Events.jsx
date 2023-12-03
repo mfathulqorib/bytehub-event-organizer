@@ -34,13 +34,17 @@ export const Events = ({allData}) => {
         <div className='flex gap-3 items-center border-b-2 border-gray-500 py-3'>
           <SearchIcon/>
           <input type='text' placeholder='Jakarta' 
+            name='filter-by-city'
             onChange={(event) => setSearchTerm(event.target.value)}
             className='px-3'/>
         </div>
       </section>
       <section className='grid grid-cols-2 lg:grid-cols-3 gap-5 max-h-screen  overflow-y-auto'>
-        {filteredEvents.map(({name, description, location, date, isBanned, id}, index)=>{
-          return <Link href={`/events/${id}`} key={toString(index)}><EventCard name={name} description={description} location={location} date={date} isBanned={isBanned} /></Link>
+        {filteredEvents.map(({name, description, location, date, isBanned, id})=>{
+          return (
+            <Link href={`/events/${id}`} key={id}>
+              <EventCard name={name} description={description} location={location} date={date} isBanned={isBanned} />
+            </Link>)
         })}
       </section>
     </div>

@@ -8,13 +8,15 @@ export const EventCard = ({name, description, location, date, isBanned}) => {
   return (
     <div className='shadow-lg border-2 border-gray-100 pb-4'>
       <div className=''>
-        <Image src={fakeImg} width={500} height={150} className='rounded-t-xl object-cover h-[250px] overflow-hidden'/>
+        <Image src={fakeImg} width={500} height={150} alt="" className='rounded-t-xl object-cover h-[250px] overflow-hidden'/>
       </div>
       <section className='flex items-center justify-between gap-3 px-4'>
         <div className='flex items-center gap-4'>
           <div className='flex flex-col items-center justify-center bg-gray-200 text-orange-900 p-2 rounded-xl'>
             <h1 className='text-md'>{getMonth(date)}</h1>
-            <p className='text-lg font-bold'>{getDay(date)}</p>
+            <p className='text-lg font-bold'>
+              {`${getDay(date)==="Invalid Date"? "": getDay(date)}`}
+            </p>
           </div>
           <div className='flex flex-col gap-3'>
             <div className='text-lg font-bold mt-2'>{shortName(name, 25)}</div>
