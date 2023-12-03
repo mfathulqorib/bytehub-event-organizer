@@ -4,6 +4,7 @@ import { EventCard } from "./EventCard";
 import Link from "next/link";
 // import { API_URL_EVENT } from "@/config/apiUrl"; <- not use
 import { SearchIcon } from "./icons/Search";
+import { getMonth } from "@/lib/cardLibray";
 
 export const Events = ({ allData }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -47,17 +48,19 @@ export const Events = ({ allData }) => {
       <section className="grid max-h-[80vh] grid-cols-2 gap-5 overflow-y-auto p-4 shadow-lg shadow-black/30 lg:grid-cols-3">
         {filteredEvents.map(
           ({ name, description, location, date, isBanned, id }, index) => {
-            return (
-              <Link href={`/events/${id}`} key={id}>
-                <EventCard
-                  name={name}
-                  description={description}
-                  location={location}
-                  date={date}
-                  isBanned={isBanned}
-                />
-              </Link>
-            );
+            if (getMonth(date) !== "Invalid Date") {
+              return (
+                <Link href={`/events/${id}`} key={id}>
+                  <EventCard
+                    name={name}
+                    description={description}
+                    location={location}
+                    date={date}
+                    isBanned={isBanned}
+                  />
+                </Link>
+              );
+            }
           },
         )}
       </section>

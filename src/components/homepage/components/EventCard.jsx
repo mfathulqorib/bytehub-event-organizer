@@ -23,31 +23,33 @@ export const EventCard = ({ name, description, location, date, isBanned }) => {
       </div>
       <section className="flex items-center justify-between gap-3 px-4">
         <div className="flex items-center gap-4">
-          <div className="flex flex-col items-center justify-center rounded-xl bg-gray-200 p-2 text-orange-900">
-            <h1 className="text-md">{getMonth(date)}</h1>
-            <p className="text-lg font-bold">{`${
-              getMonth(date) === "Invalid Date" ? "" : getDay(date)
-            }`}</p>
+          <div className="flex w-max flex-col gap-2 py-2">
+            <div className="flex flex-col items-center justify-center rounded-xl bg-gray-200 p-2 text-orange-900">
+              <h1 className="text-md">{getMonth(date)}</h1>
+              <p className="text-lg font-bold">{getDay(date)}</p>
+            </div>
+            <div
+              className={`flex items-center gap-1 text-sm ${
+                isBanned ? "text-red-500" : "text-green-500"
+              }`}
+            >
+              <span
+                className={`block h-2 w-2 animate-pulse rounded-full ${
+                  isBanned ? "bg-red-500" : "bg-green-500"
+                } `}
+              ></span>
+              {isBanned ? "Not Available" : "Available"}
+            </div>
           </div>
           <div className="flex flex-col gap-3">
             <div className="mt-2 text-lg font-bold">{shortName(name, 25)}</div>
             <div className="flex gap-3">
               <div className="text-sm">{location}</div>
-              <div
-                className={`text-sm ${
-                  isBanned ? "text-red-500" : "text-green-500"
-                }`}
-              >
-                {isBanned ? "Not Available" : "Available"}
-              </div>
             </div>
             <div className="text-sm text-gray-500">
               {shortName(description, 50)}
             </div>
           </div>
-        </div>
-        <div className="text-sm text-gray-500">
-          {shortName(description, 50)}
         </div>
       </section>
     </div>
