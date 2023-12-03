@@ -3,7 +3,7 @@ import React from "react";
 
 export const useFetchData = () => {
   const getAllEvents = async () => {
-    const res = await fetch(`${API_URL}/events`, {
+    const res = await fetch(`https://eventmakers-api.vercel.app/api/events`, {
       method: "GET",
     });
     const data = await res.json();
