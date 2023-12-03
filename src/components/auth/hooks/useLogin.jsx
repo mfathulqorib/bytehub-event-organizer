@@ -27,7 +27,7 @@ export const useLogin = () => {
     const { email, password } = loginData;
     setLoading(true);
 
-    const res = await fetch(`${API_URL}/login`, {
+    const res = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -44,7 +44,7 @@ export const useLogin = () => {
 
     setLoading(false);
     toast.success("Login succesfully, redirecting...");
-    setTimeout(() => router.push("/dashboard"), 1000);
+    setTimeout(() => router.push("/dashboard"), 500);
     return;
   };
 
