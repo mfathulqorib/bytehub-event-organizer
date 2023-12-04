@@ -5,7 +5,7 @@ import { Footer } from "@/components/homepage/components/Footer";
 import { API_URL } from "@/config/apiUrl";
 
 const getAllEvents = async () => {
-  const res = await fetch(`https://eventmakers-api.vercel.app/api/events`, {
+  const res = await fetch(`${API_URL}/events`, {
     method: "GET",
   });
   const data = await res.json();
