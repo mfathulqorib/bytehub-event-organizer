@@ -45,7 +45,7 @@ export const Events = ({ allData }) => {
           />
         </div>
       </section>
-      <section className="grid max-h-[80vh] grid-cols-2 gap-5 overflow-y-auto p-4 shadow-lg shadow-black/30 lg:grid-cols-3">
+      <section className="mx-auto grid max-h-[80vh] max-w-[90%] grid-cols-2 gap-5 overflow-y-auto p-4 shadow-lg shadow-black/30 lg:grid-cols-3">
         {filteredEvents.map(
           ({ name, description, location, date, isBanned, id }, index) => {
             if (getMonth(date) !== "Invalid Date") {
